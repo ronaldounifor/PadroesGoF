@@ -2,6 +2,8 @@ public class Jogador {
     private String nome;
     private String posicao;
     private Double salario;
+    public Jogador() {
+    }
     public Jogador(String nome, String posicao, Double salario) {
         this.nome = nome;
         this.posicao = posicao;
@@ -24,5 +26,13 @@ public class Jogador {
     }
     public void setSalario(Double salario) {
         this.salario = salario;
+    }
+
+    public Jogador clone() {
+        Jogador clone = new Jogador();
+        clone.setNome(this.nome);
+        clone.setSalario(this.salario);
+        clone.setPosicao(this.posicao);
+        return clone;
     }
 }

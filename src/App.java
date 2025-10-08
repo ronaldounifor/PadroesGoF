@@ -18,8 +18,7 @@ public class App {
 
         Time timeCopia = timeOriginal.clone();
 
-        timeOriginal.setNome("A Seleção");
-        timeOriginal.adicionarJogador(new Jogador("Vampeta", "Volante", 6.0));
+        timeOriginal.getJogadores().get(0).setNome("EEEEEEEEEEEEITA");
         
         System.out.println(timeOriginal);
         System.out.println("##########################################################################");

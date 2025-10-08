@@ -30,15 +30,18 @@ public class Time {
         Time clone = new Time();
         clone.setNome(this.getNome());
         clone.setCor(this.getCor());
-        clone.setTecnico(this.getTecnico());
-        clone.setJogadores(this.getJogadores());
+        clone.setTecnico(this.getTecnico().clone());
+        ArrayList<Jogador> cloneJogadores = new ArrayList<>();
+        for (Jogador jogador : jogadores)
+            cloneJogadores.add(jogador.clone());
+        clone.setJogadores(cloneJogadores);
         return clone;
     }
 
     public void adicionarJogador(Jogador jogador) {
         jogadores.add(jogador);
     }
-    
+
     public void removerJogador(Jogador jogador) {
         jogadores.remove(jogador);
     }

@@ -21,4 +21,11 @@ public class Tecnico {
     public void setSalario(Double salario) {
         this.salario = salario;
     }
+
+    public Tecnico clone() {
+        Tecnico clone = new Tecnico();
+        clone.setNome(this.getNome());
+        clone.setSalario(this.getSalario());
+        return clone;
+    }
 }
