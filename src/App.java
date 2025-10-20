@@ -1,10 +1,13 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        VendaFacade fachada = new VendaFacade();
+        Triangulo triangulo = new Triangulo(2, 2);
+        // Quadrado quadrado = new Quadrado(2);
 
-        fachada.iniciarVenda();
-        fachada.adicionarProdutos(0, 2);
-        fachada.getTotal();
-        fachada.getDetalhes(2);
+        construindoImportante(new Adapter(2));
+
+    }
+
+    public static void construindoImportante(Quadrado q) {
+        //algo extremamente importante
     }
 }
