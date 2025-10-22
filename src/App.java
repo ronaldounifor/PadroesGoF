@@ -1,13 +1,14 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        Quadrado quadrado = new Quadrado(2);
-        Triangulo triangulo = new Triangulo(2, 2);
+        Venda v = new Venda();
 
-        calcularImportante(new TrianguloQuadradoAdaptador(triangulo));
-    }
+        v.adicionarProduto(new Produto("Uva", 50));
+        v.adicionarProduto(new Produto("Maca", 50));
 
-    public static void calcularImportante(Quadrado quadrado) {
-        double area = quadrado.getArea();
-        System.out.println(area);
+        v.adicionarStrategy(new CupomStrategy(v, new Cupom(0.3)));
+        // v.adicionarStrategy(new BlackFridayStrategy(v));
+        v.adicionarStrategy(new PrimeiraCompraStrategy(v));
+
+        v.imprimir();
     }
 }
